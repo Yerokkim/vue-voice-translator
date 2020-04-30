@@ -1,28 +1,58 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app color="primary">
+    <v-layout class="first" xs12 md12>
+      <ShowResults />
+      <!-- <v-spacer></v-spacer> -->
+    </v-layout>
+    <v-layout class="second" xs12 md12>
+      <v-content align="center">
+        <VoiceRecord />
+      </v-content>
+    </v-layout>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VoiceRecord from "./components/VoiceRecord";
+import ShowResults from "./components/ShowResults";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  }
-}
+    VoiceRecord,
+    ShowResults,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Noto+Serif:wght@700&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Noto Serif", serif;
+  color: #ffeb3b;
+}
+img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer {
+  height: 60px;
+}
+.first {
+  width: 100%;
+  height: 100%;
+  background-color: #ffeb3b;
+}
+.second {
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 </style>
